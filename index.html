@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 500px;
+				height: 300px;
+				margin: 10px auto;
+				outline: 2px solid red;
+				position: relative;
+			}
+			#box div{
+				width: 500px;
+				height: 300px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			#box ul{
+				width: 100px;
+				height: 10px;
+				position: absolute;
+				top: 260px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			#box ul li{
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				list-style: none;
+				float: left;
+				background: #FF0000;
+				margin-left: 6px;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box">
+				<div style="display: block;">1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+				var box = document.getElementById('box');
+				var divs = box.getElementsByTagName('div');
+				var lis = document.getElementsByTagName('li');
+				for (var i=0;i<lis.length;i++) {
+					lis[i].xuhao = i;
+					lis[i].onclick = function(){
+						for (var i=0;i<divs.length;i++) {
+							divs[i].style.display = 'none';
+						}
+						divs[this.xuhao].style.display = 'block';
+					}
+				}
+				
+			</script>
+			
+			
+	</body>
+</html>
